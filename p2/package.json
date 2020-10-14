@@ -1,0 +1,7 @@
+{
+  "name": "p2",
+  "main": "p2.js",
+  "scripts": {
+    "start": "node ./p2.js"
+  }
+}

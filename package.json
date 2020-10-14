@@ -1,0 +1,35 @@
+{
+  "name": "graceful-termination",
+  "version": "1.0.0",
+  "description": "This is an example for running multiple services inside a single Docker container and handling their graceful termination.",
+  "scripts": {
+    "start": "npm-run-all --parallel start-p1 start-p2",
+    "start-p1": "cd p1 && npm start",
+    "start-p2": "cd p2 && npm start",
+    "build-image": "node scripts/build-image.js",
+    "npm-install-p1": "cd p1 && npm i",
+    "npm-install-p2": "cd p2 && npm i",
+    "postinstall": "npm-run-all -l npm-install-p1 npm-install-p2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/irenayordgeorgieva/graceful-termination.git"
+  },
+  "keywords": [
+    "Docker",
+    "container",
+    "multiple",
+    "services",
+    "graceful",
+    "termination"
+  ],
+  "author": "Irena Georgieva",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/irenayordgeorgieva/graceful-termination/issues"
+  },
+  "homepage": "https://github.com/irenayordgeorgieva/graceful-termination#readme",
+  "dependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
